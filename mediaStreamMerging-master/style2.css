@@ -4,12 +4,12 @@ body {
   padding-right: 60px;
   padding-bottom: 70px;
   color: #586b8f;
-  background-color: #ffed78;
+  background-color: #ec6d71;
   font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
 }
 
 h1 {
-  border-bottom: dashed 2px #f73f52;
+  border-bottom: dashed 2px #ec6d71;
   /*線の種類（点線）2px 線色*/
 }
 
@@ -68,7 +68,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   font-size: 14px;
   margin: 8px;
   width: 250px;
-  background: #f73f52;
+  background: #ec6d71;
   padding: 10px;
   text-align:center;
 }
@@ -102,7 +102,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 .musicButton > button{
   display: inline-block;
 text-decoration: none;
-background: #f73f52;
+background: #ec6d71;
 color: #FFF;
 font-size: 13px;
 width: 60px;
