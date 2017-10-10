@@ -1,5 +1,5 @@
 body {
-  border-top:solid 60px #addce4;
+  border-top:solid 60px #f73f52;
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 70px;
@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-  border-bottom: dashed 2px #addce4;
+  border-bottom: dashed 2px #f73f52;
   /*線の種類（点線）2px 線色*/
 }
 
@@ -68,7 +68,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   font-size: 14px;
   margin: 8px;
   width: 250px;
-  background: #addce4;
+  background: #f73f52;
   padding: 10px;
   text-align:center;
 }
@@ -102,7 +102,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 .musicButton > button{
   display: inline-block;
 text-decoration: none;
-background: #addce4;
+background: #f73f52;
 color: #FFF;
 font-size: 13px;
 width: 60px;
