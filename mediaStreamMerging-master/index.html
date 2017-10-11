@@ -71,8 +71,8 @@
 
       // (1) まずはビデオのみのストリームを取り出す
       navigator.getUserMedia({
-          audio: true,
-          video: false
+          audio: false,
+          video: true,
         },
         function(videoStream) {
           // Set your video displays
@@ -88,10 +88,10 @@
             function(audioStream) {
 
               SpeechJammer.setupSJ(audioStream);
-              PichShift.setup(audioStream);
+              //PichShift.setup(audioStream);
 
               // できあがったoutputをvideoStreamに合流させる
-              videoStream.addTrack(PichShift.output.stream.getAudioTracks()[0]);
+              //videoStream.addTrack(PichShift.output.stream.getAudioTracks()[0]);
 
               step2();
             },
@@ -105,31 +105,31 @@
         } //エラー表示
       );
 
+    }
 
-      function step2() {
-        $('#step1, #step3').hide();
-        $('#step2').show();
+    function step2() {
+      $('#step1, #step3').hide();
+      $('#step2').show();
+    }
+
+    function step3(call) {
+      // Hang up on an existing call if present
+      if (window.existingCall) {
+        window.existingCall.close();
       }
 
-      function step3(call) {
-        // Hang up on an existing call if present
-        if (window.existingCall) {
-          window.existingCall.close();
-        }
+      // Wait for stream on the call, then set peer video display
+      call.on('stream', function(stream) {
+        $('#their-video').prop('src', URL.createObjectURL(stream));
+      });
 
-        // Wait for stream on the call, then set peer video display
-        call.on('stream', function(stream) {
-          $('#their-video').prop('src', URL.createObjectURL(stream));
-        });
-
-        // UI stuff
-        window.existingCall = call;
-        $('#their-id').text(call.peer);
-        call.on('close', step2);
-        $('#step1, #step2').hide();
-        $('#step3').show();
-      }
-
+      // UI stuff
+      window.existingCall = call;
+      $('#their-id').text(call.peer);
+      call.on('close', step2);
+      $('#step1, #step2').hide();
+      $('#step3').show();
+    }
   </script>
 
 </head>
